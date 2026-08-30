@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.label {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.langBtn {
+  /* Minimum 48px tap target per NFR-Usability */
+  min-height: 48px;
+  min-width: 80px;
+  padding: 10px 16px;
+
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 2px solid var(--color-primary);
+  background: transparent;
+  color: var(--color-primary);
+  transition: background 0.18s ease, color 0.18s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.langBtn:hover {
+  background: var(--color-primary-light);
+  transform: scale(1.03);
+}
+
+.langBtn:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 3px;
+}
+
+.langBtn.active {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.langBtn.active:hover {
+  background: var(--color-primary-dark);
+}

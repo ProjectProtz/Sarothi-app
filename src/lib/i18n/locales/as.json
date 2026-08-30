@@ -1,0 +1,66 @@
+{
+  "app.name": "সাৰথি",
+  "app.tagline": "আপোনাৰ জ্ঞানমূলক সঙ্গী",
+
+  "nav.home": "ঘৰ",
+  "nav.back": "পিছলৈ",
+
+  "home.greeting": "নমস্কাৰ, ৰতন!",
+  "home.subtitle": "আজি আপুনি কি কৰিব বিচাৰে?",
+  "home.card.play": "খেলুৱৈ",
+  "home.card.play.subtitle": "জ্ঞানমূলক খেল",
+  "home.card.reminders": "সোঁৱৰণী",
+  "home.card.reminders.subtitle": "ঔষধ আৰু পানী",
+  "home.card.progress": "মোৰ অগ্ৰগতি",
+  "home.card.progress.subtitle": "আপোনাৰ যাত্ৰা চাওক",
+
+  "language.selector.label": "ভাষা",
+  "language.en": "English",
+  "language.as": "অসমীয়া",
+
+  "placeholder.comingsoon": "শীঘ্ৰে আহিব",
+  "placeholder.taskb": "খেল ইয়াত থাকিব (কাৰ্য্য B)",
+  "placeholder.taskd": "সোঁৱৰণী ইয়াত থাকিব (কাৰ্য্য D)",
+  "placeholder.taske": "অগ্ৰগতি ইয়াত থাকিব (কাৰ্য্য E)",
+  "placeholder.caregiver": "যত্নকাৰী ডেচব'ৰ্ড (কাৰ্য্য E)",
+
+  "screen.play.title": "খেলুৱৈ",
+  "screen.reminders.title": "সোঁৱৰণী",
+  "screen.progress.title": "মোৰ অগ্ৰগতি",
+  "screen.caregiver.title": "যত্নকাৰী ডেচব'ৰ্ড",
+
+  "a11y.home.card.play": "খেলৰ পৰ্দা খোলক",
+  "a11y.home.card.reminders": "সোঁৱৰণীৰ পৰ্দা খোলক",
+  "a11y.home.card.progress": "মোৰ অগ্ৰগতিৰ পৰ্দা খোলক",
+  "a11y.language.selector": "ভাষা বাছনি কৰক",
+
+  "screen.play.action.back": "পিছলৈ",
+  
+  "game.counting.title": "বস্তু গণনা",
+  "game.counting.subtitle": "বস্তুবোৰ বিচাৰি গণনা কৰক",
+  "game.math.title": "দৈনন্দিন অংক",
+  "game.math.subtitle": "সাধাৰণ দৈনন্দিন সমস্যাবোৰ সমাধান কৰক",
+  
+  "game.action.exit": "প্ৰস্থান",
+  "game.action.continue": "আগলৈ",
+  
+  "game.summary.great": "বহুত ভাল!",
+  "game.summary.good": "ভাল চেষ্টা!",
+  
+  "game.counting.prompt": "আপুনি কিমান {item} দেখা পাইছে?",
+  "game.counting.theme.bihu": "বিহু খেতি",
+  "game.counting.item.paddy": "ধানৰ মুঠাবোৰ",
+  "game.counting.item.basket": "বাঁহৰ পাচি",
+  "game.counting.theme.tea": "চাহ বাগিচা",
+  "game.counting.item.tea_leaf": "চাহ পাত",
+  "game.counting.item.betel_nut": "তামোল",
+  "game.counting.theme.wangala": "ৱাংগালা উৎসৱ",
+  "game.counting.item.feather": "ধনেশ পক্ষীৰ পাখি",
+  "game.counting.item.shawl": "পৰম্পৰাগত চাদৰ",
+  
+  "game.math.template.oranges_add": "আপোনাৰ ওচৰত {n} পাচি সুমথিৰা আছে আৰু আপোনাৰ ওচৰচুবুৰীয়াই আপোনাক আৰু {m} দিলে, এতিয়া আপোনাৰ ওচৰত কিমান আছে?",
+  "game.math.template.oranges_sub": "আপোনাৰ ওচৰত {n} পাচি সুমথিৰা আছে আৰু আপুনি তাৰে {m} আপোনাৰ ওচৰচুবুৰীয়াক দিলে, এতিয়া কিমান বাকী থাকিল?",
+  "game.math.template.tea_add": "আপুনি ৰাতিপুৱা {n} পাচি চাহ পাত ছিঙিলে আৰু আবেলি {m} পাচি। মুঠতে কিমান হ'ল?",
+  "game.math.template.tea_sub": "আপোনাৰ ওচৰত {n} পাচি চাহ পাত আছিল, কিন্তু তাৰে {m} ফেক্টৰীলৈ নিয়া হ'ল। এতিয়া কিমান বাকী থাকিল?",
+  "game.math.template.pitha_add": "আপুনি বিহুৰ বাবে {n} টা পিঠা বনালে, আৰু আপোনাৰ ভনীয়েকে {m} টা বনালে। মুঠতে কিমান পিঠা হ'ল?"
+}

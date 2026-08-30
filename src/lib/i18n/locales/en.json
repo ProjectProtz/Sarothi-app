@@ -1,0 +1,66 @@
+{
+  "app.name": "Sarothi",
+  "app.tagline": "Your cognitive companion",
+
+  "nav.home": "Home",
+  "nav.back": "Back",
+
+  "home.greeting": "Hello, Ratan!",
+  "home.subtitle": "What would you like to do today?",
+  "home.card.play": "Play",
+  "home.card.play.subtitle": "Cognitive games",
+  "home.card.reminders": "Reminders",
+  "home.card.reminders.subtitle": "Medicine & hydration",
+  "home.card.progress": "My Progress",
+  "home.card.progress.subtitle": "See your journey",
+
+  "language.selector.label": "Language",
+  "language.en": "English",
+  "language.as": "অসমীয়া",
+
+  "placeholder.comingsoon": "Coming soon",
+  "placeholder.taskb": "Games will be here (Task B)",
+  "placeholder.taskd": "Reminders will be here (Task D)",
+  "placeholder.taske": "Progress will be here (Task E)",
+  "placeholder.caregiver": "Caregiver dashboard (Task E)",
+
+  "screen.play.title": "Play",
+  "screen.reminders.title": "Reminders",
+  "screen.progress.title": "My Progress",
+  "screen.caregiver.title": "Caregiver Dashboard",
+
+  "a11y.home.card.play": "Open games screen",
+  "a11y.home.card.reminders": "Open reminders screen",
+  "a11y.home.card.progress": "Open my progress screen",
+  "a11y.language.selector": "Select language",
+
+  "screen.play.action.back": "Back",
+  
+  "game.counting.title": "Object Counting",
+  "game.counting.subtitle": "Find and count the items",
+  "game.math.title": "Everyday Math",
+  "game.math.subtitle": "Solve simple daily problems",
+  
+  "game.action.exit": "Exit",
+  "game.action.continue": "Continue",
+  
+  "game.summary.great": "Great job!",
+  "game.summary.good": "Good try!",
+  
+  "game.counting.prompt": "How many {item} can you see?",
+  "game.counting.theme.bihu": "Bihu Harvest",
+  "game.counting.item.paddy": "paddy sheaves",
+  "game.counting.item.basket": "bamboo baskets",
+  "game.counting.theme.tea": "Tea Garden",
+  "game.counting.item.tea_leaf": "tea leaves",
+  "game.counting.item.betel_nut": "betel nuts",
+  "game.counting.theme.wangala": "Wangala Festival",
+  "game.counting.item.feather": "hornbill feathers",
+  "game.counting.item.shawl": "traditional shawls",
+  
+  "game.math.template.oranges_add": "If you have {n} baskets of oranges and your neighbor gives you {m} more, how many do you have?",
+  "game.math.template.oranges_sub": "If you have {n} baskets of oranges and give {m} to your neighbor, how many are left?",
+  "game.math.template.tea_add": "You picked {n} baskets of tea leaves in the morning and {m} in the afternoon. How many total?",
+  "game.math.template.tea_sub": "You had {n} baskets of tea leaves, but {m} were taken to the factory. How many are left?",
+  "game.math.template.pitha_add": "You made {n} pithas for Bihu, and your sister made {m}. How many pithas in total?"
+}

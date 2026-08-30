@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="#4f46e5"/>
+  <!-- Lotus petals (cognitive engagement symbol) -->
+  <!-- Center circle -->
+  <circle cx="256" cy="256" r="60" fill="#f59e0b" opacity="0.95"/>
+  <!-- Top petal -->
+  <ellipse cx="256" cy="168" rx="36" ry="60" fill="#818cf8" opacity="0.9"/>
+  <!-- Bottom petal -->
+  <ellipse cx="256" cy="344" rx="36" ry="60" fill="#818cf8" opacity="0.9"/>
+  <!-- Left petal -->
+  <ellipse cx="168" cy="256" rx="60" ry="36" fill="#a5b4fc" opacity="0.85"/>
+  <!-- Right petal -->
+  <ellipse cx="344" cy="256" rx="60" ry="36" fill="#a5b4fc" opacity="0.85"/>
+  <!-- Diagonal petals -->
+  <ellipse cx="198" cy="198" rx="30" ry="55" fill="#c7d2fe" opacity="0.8" transform="rotate(-45 198 198)"/>
+  <ellipse cx="314" cy="198" rx="30" ry="55" fill="#c7d2fe" opacity="0.8" transform="rotate(45 314 198)"/>
+  <ellipse cx="198" cy="314" rx="30" ry="55" fill="#c7d2fe" opacity="0.8" transform="rotate(45 198 314)"/>
+  <ellipse cx="314" cy="314" rx="30" ry="55" fill="#c7d2fe" opacity="0.8" transform="rotate(-45 314 314)"/>
+  <!-- Center star/highlight -->
+  <circle cx="256" cy="256" r="28" fill="#fef3c7"/>
+  <circle cx="256" cy="256" r="14" fill="#f59e0b"/>
+</svg>
