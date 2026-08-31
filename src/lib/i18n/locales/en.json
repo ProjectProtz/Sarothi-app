@@ -62,5 +62,29 @@
   "game.math.template.oranges_sub": "If you have {n} baskets of oranges and give {m} to your neighbor, how many are left?",
   "game.math.template.tea_add": "You picked {n} baskets of tea leaves in the morning and {m} in the afternoon. How many total?",
   "game.math.template.tea_sub": "You had {n} baskets of tea leaves, but {m} were taken to the factory. How many are left?",
-  "game.math.template.pitha_add": "You made {n} pithas for Bihu, and your sister made {m}. How many pithas in total?"
+  "game.math.template.pitha_add": "You made {n} pithas for Bihu, and your sister made {m}. How many pithas in total?",
+
+  "reminder.type.medicine": "Medicine",
+  "reminder.type.hydration": "Hydration",
+  "reminder.type.activity": "Activity",
+  "reminder.type.appointment": "Appointment",
+  "reminder.status.pending": "Pending",
+  "reminder.status.done": "Done",
+  "reminder.status.missed": "Missed",
+  "reminder.status.snoozed": "Snoozed",
+  "reminder.action.done": "Done",
+  "reminder.action.snooze": "Remind me later",
+  "reminder.reset": "Reset (Demo)",
+  "reminder.reset.confirm": "Reset all today's reminders to pending for demo?",
+  "reminder.section.next": "Up Next",
+  "reminder.section.later": "Today's Reminders",
+  "reminder.empty": "No more reminders for today!",
+  
+  "reminder.label.medicine.morning": "Morning Pill",
+  "reminder.label.hydration.morning": "Drink a glass of water",
+  "reminder.label.medicine.afternoon": "Afternoon Pill",
+  "reminder.label.hydration.afternoon": "Drink a glass of water",
+  "reminder.label.activity.walk": "Evening Walk",
+  "reminder.label.medicine.evening": "Night Pill",
+  "reminder.label.appointment.doctor": "Doctor Checkup"
 }

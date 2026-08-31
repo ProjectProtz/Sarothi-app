@@ -1,0 +1,205 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f5f5f5;
+  padding: 24px;
+  font-family: system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #111;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.resetBtn {
+  font-size: 16px;
+  padding: 10px 18px;
+  background: #fdf2e9;
+  border: 1px solid #e0a96d;
+  color: #a04000;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.resetBtn:hover {
+  background-color: #fae5d3;
+}
+
+.resetBtn:active {
+  transform: scale(0.97);
+}
+
+.backBtn {
+  font-size: 22px;
+  padding: 12px 32px;
+  background: #e0e0e0;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+.nextReminderCard {
+  background: white;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.nextIcon {
+  font-size: 80px;
+  margin-bottom: 16px;
+}
+
+.nextTime {
+  font-size: 56px;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.nextLabel {
+  font-size: 32px;
+  color: #444;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.btnDone, .btnSnooze {
+  flex: 1;
+  padding: 24px;
+  font-size: 28px;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.btnDone {
+  background-color: #2e7d32;
+  color: white;
+}
+
+.btnSnooze {
+  background-color: #f57c00;
+  color: white;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  padding-bottom: 40px;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.listIcon {
+  font-size: 40px;
+  margin-right: 20px;
+}
+
+.listContent {
+  flex: 1;
+}
+
+.listTime {
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.listLabel {
+  font-size: 22px;
+  color: #555;
+}
+
+.listStatus {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 24px;
+}
+
+.status_pending {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+.status_done {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+.status_snoozed {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+.status_missed {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.emptyState {
+  text-align: center;
+  font-size: 28px;
+  color: #777;
+  padding: 48px;
+  font-weight: 500;
+}
+
+.overdue {
+  border: 6px solid #f44336;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.4); }
+  70% { box-shadow: 0 0 0 20px rgba(244, 67, 54, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(244, 67, 54, 0); }
+}

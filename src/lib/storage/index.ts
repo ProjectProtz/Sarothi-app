@@ -48,6 +48,7 @@ export {
   updateReminderStatus,
   updateReminder,
   deleteReminder,
+  resetTodayReminders,
 } from './reminders';
 
 // Alert

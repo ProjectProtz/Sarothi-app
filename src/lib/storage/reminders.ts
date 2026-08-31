@@ -49,3 +49,22 @@ export async function updateReminder(
 export async function deleteReminder(id: string): Promise<void> {
   await db.reminders.delete(id);
 }
+
+/** Reset all of today's reminders back to 'pending' state (for demo/testing). */
+export async function resetTodayReminders(patientId?: string): Promise<void> {
+  const now = new Date();
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+  const endOfToday = startOfToday + 24 * 60 * 60 * 1000;
+
+  if (patientId) {
+    await db.reminders
+      .where('patient_id')
+      .equals(patientId)
+      .filter((r) => r.scheduled_time >= startOfToday && r.scheduled_time < endOfToday)
+      .modify({ status: 'pending' });
+  } else {
+    await db.reminders
+      .filter((r) => r.scheduled_time >= startOfToday && r.scheduled_time < endOfToday)
+      .modify({ status: 'pending' });
+  }
+}
