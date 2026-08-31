@@ -1,0 +1,55 @@
+/* SpeakButton.module.css */
+
+.btn {
+  /* 48 × 48 px minimum tap target — WCAG 2.5.5 / elderly accessibility */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary, #6c63ff);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.12s ease;
+}
+
+.btn:hover {
+  background: color-mix(in srgb, var(--color-primary, #6c63ff) 12%, transparent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary, #6c63ff) 18%, transparent);
+}
+
+.btn:active {
+  transform: scale(0.93);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--color-primary, #6c63ff);
+  outline-offset: 3px;
+}
+
+/* Active / speaking state */
+.speaking {
+  background: color-mix(in srgb, var(--color-primary, #6c63ff) 18%, transparent);
+  border-color: var(--color-primary, #6c63ff);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-primary, #6c63ff) 40%, transparent); }
+  50%       { box-shadow: 0 0 0 10px color-mix(in srgb, var(--color-primary, #6c63ff) 0%, transparent); }
+}
+
+.icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  display: block;
+  /* Prevent emoji from inheriting colour overrides */
+  color: initial;
+}
