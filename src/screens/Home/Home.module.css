@@ -29,13 +29,20 @@
   padding: 32px 24px 20px;
 }
 
+.greetingRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
 .greetingText {
   /* Single h1 per page — NFR heading hierarchy */
   font-size: 2rem;
   font-weight: 800;
   color: var(--color-text-primary);
   line-height: 1.2;
-  margin: 0 0 8px;
+  margin: 0;
 }
 
 .subtitle {
@@ -44,6 +51,7 @@
   margin: 0;
   line-height: 1.5;
 }
+
 
 .cards {
   flex: 1;

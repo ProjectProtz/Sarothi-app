@@ -4,6 +4,8 @@ import { useTranslation } from '@/lib/i18n';
 import { getActivePatient, addSession } from '@/lib/storage';
 import { calculateNextDifficulty } from '../adaptiveDifficulty';
 import { MATH_TEMPLATES, type MathTemplate } from './templates';
+import { useVoiceGuidance } from '@/lib/voice';
+import { SpeakButton } from '@/components/SpeakButton';
 import styles from './FingerMathGame.module.css';
 
 const getNumberRange = (difficulty: number) => {
@@ -28,6 +30,16 @@ export function FingerMathGame() {
   const [n, setN] = useState<number>(0);
   const [m, setM] = useState<number>(0);
   const [options, setOptions] = useState<number[]>([]);
+
+  // Replace placeholders
+  const questionStr = template
+    ? t(template.templateKey as any)
+        .replace('{n}', n.toString())
+        .replace('{m}', m.toString())
+    : '';
+
+  // Auto-read question text on load/change
+  useVoiceGuidance(questionStr);
   
   const [startTime, setStartTime] = useState<number>(0);
   const [attempts, setAttempts] = useState<number>(0);
@@ -139,11 +151,6 @@ export function FingerMathGame() {
     );
   }
 
-  // Replace placeholders
-  const questionStr = t(template.templateKey as any)
-    .replace('{n}', n.toString())
-    .replace('{m}', m.toString());
-
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -153,8 +160,11 @@ export function FingerMathGame() {
       </div>
 
       <div className={styles.questionArea}>
-        <div className={styles.questionText}>
-          {questionStr}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+          <div className={styles.questionText}>
+            {questionStr}
+          </div>
+          <SpeakButton text={questionStr} />
         </div>
       </div>
 

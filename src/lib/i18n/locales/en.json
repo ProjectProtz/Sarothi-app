@@ -33,6 +33,8 @@
   "a11y.home.card.reminders": "Open reminders screen",
   "a11y.home.card.progress": "Open my progress screen",
   "a11y.language.selector": "Select language",
+  "a11y.speak.repeat": "Repeat aloud",
+  "a11y.speak.stop": "Stop speaking",
 
   "screen.play.action.back": "Back",
   
