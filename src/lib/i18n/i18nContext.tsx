@@ -23,6 +23,7 @@ import React, {
 } from 'react';
 import enStrings from './locales/en.json';
 import asStrings from './locales/as.json';
+import { setActiveLang } from '@/lib/voice';
 
 // --- Types -------------------------------------------------------------------
 
@@ -81,6 +82,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
 
   const setLanguage = useCallback((lang: SupportedLanguage) => {
     setLanguageState(lang);
+    setActiveLang(lang); // Keep TTS singleton in sync with UI language
     try {
       localStorage.setItem(STORAGE_KEY, lang);
     } catch {
@@ -103,8 +105,10 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   );
 
   // Update the HTML lang attribute when language changes (accessibility + SEO)
+  // Also keep TTS module in sync on initial mount (persisted language may not be 'en').
   useEffect(() => {
     document.documentElement.lang = language;
+    setActiveLang(language);
   }, [language]);
 
   const value = useMemo(

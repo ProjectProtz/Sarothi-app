@@ -2,15 +2,23 @@
  * Home screen — FR-1.
  * Shows 3 large navigation cards: Play, Reminders, My Progress.
  * Language selector in top-right corner.
+ *
+ * Voice: auto-reads the greeting on mount and on language change (useVoiceGuidance).
+ * A 🔊 SpeakButton next to the greeting lets the patient replay it on demand.
  */
 
 import { useTranslation } from '@/lib/i18n';
+import { useVoiceGuidance } from '@/lib/voice';
 import { NavCard } from '@/components/NavCard';
 import { LanguageSelector } from '@/components/LanguageSelector';
+import { SpeakButton } from '@/components/SpeakButton';
 import styles from './Home.module.css';
 
 export function HomeScreen() {
   const { t } = useTranslation();
+
+  // Auto-read the greeting on mount and whenever the language changes.
+  useVoiceGuidance(t('home.greeting'));
 
   return (
     <div className={styles.page}>
@@ -22,7 +30,10 @@ export function HomeScreen() {
 
       {/* Greeting */}
       <section className={styles.greeting} aria-label="greeting">
-        <h1 className={styles.greetingText}>{t('home.greeting')}</h1>
+        <div className={styles.greetingRow}>
+          <h1 className={styles.greetingText}>{t('home.greeting')}</h1>
+          <SpeakButton text={t('home.greeting')} />
+        </div>
         <p className={styles.subtitle}>{t('home.subtitle')}</p>
       </section>
 

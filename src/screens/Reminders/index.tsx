@@ -4,7 +4,7 @@ import { useTranslation } from '@/lib/i18n';
 import { getActivePatient } from '@/lib/storage';
 import { getRemindersForPatient, updateReminderStatus, resetTodayReminders } from '@/lib/storage/reminders';
 import type { Reminder } from '@/lib/storage/db';
-import { speakText, type VoiceLang } from '@/lib/voice';
+import { speakText } from '@/lib/voice';
 import styles from './Reminders.module.css';
 
 const ICON_MAP: Record<string, string> = {
@@ -65,7 +65,7 @@ export function RemindersScreen() {
   useEffect(() => {
     if (nextReminder) {
       const label = t(nextReminder.label as any);
-      speakText(label, language as VoiceLang);
+      speakText(label, language);
     }
   }, [nextReminder?.id, language, t]);
   

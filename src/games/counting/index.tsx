@@ -4,6 +4,8 @@ import { useTranslation } from '@/lib/i18n';
 import { getActivePatient, addSession } from '@/lib/storage';
 import { calculateNextDifficulty } from '../adaptiveDifficulty';
 import { COUNTING_THEMES, type CountingTheme } from './themes';
+import { useVoiceGuidance } from '@/lib/voice';
+import { SpeakButton } from '@/components/SpeakButton';
 import styles from './CountingGame.module.css';
 
 // Difficulty logic
@@ -43,6 +45,14 @@ export function ObjectCountingGame() {
   const [difficulty, setDifficulty] = useState<number | null>(null);
   const [patientId, setPatientId] = useState<string | null>(null);
   const [theme, setTheme] = useState<CountingTheme | null>(null);
+
+  // Dynamically compute prompt text
+  const promptText = theme
+    ? t('game.counting.prompt').replace('{item}', t(theme.targetNameKey as any))
+    : '';
+
+  // Auto-read prompt text on load/change
+  useVoiceGuidance(promptText);
 
   const [targets, setTargets] = useState<RenderItem[]>([]);
   const [distractors, setDistractors] = useState<RenderItem[]>([]);
@@ -172,8 +182,9 @@ export function ObjectCountingGame() {
   return (
     <div className={styles.container} style={{ backgroundColor: theme.backgroundColor }}>
       <div className={styles.header}>
-        <div className={styles.title}>
-          {t('game.counting.prompt').replace('{item}', t(theme.targetNameKey as any))}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div className={styles.title}>{promptText}</div>
+          <SpeakButton text={promptText} />
         </div>
         <button onClick={() => navigate('/play')} className={styles.btnPrimary} style={{ padding: '8px 16px', fontSize: '18px' }}>
           {t('game.action.exit')}

@@ -9,7 +9,7 @@
 .header {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
   margin-bottom: 32px;
 }
 
@@ -21,12 +21,15 @@
   border: 2px solid var(--text-primary);
   background: white;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .title {
   font-size: 32px;
   margin: 0;
+  flex: 1; /* Take available space so SpeakButton sits at end */
 }
+
 
 .grid {
   display: flex;
