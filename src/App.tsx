@@ -12,6 +12,7 @@ import { HomeScreen } from '@/screens/Home';
 import { PlayScreen } from '@/screens/Play';
 import { ObjectCountingGame } from '@/games/counting';
 import { FingerMathGame } from '@/games/fingerMath';
+import { RegionalMemoryMatchGame } from '@/games/memoryMatch';
 import { RemindersScreen } from '@/screens/Reminders';
 import { ProgressScreen } from '@/screens/Progress';
 import { CaregiverDashboardScreen } from '@/screens/CaregiverDashboard';
@@ -24,6 +25,7 @@ export function App() {
         <Route path="/play" element={<PlayScreen />} />
         <Route path="/play/counting" element={<ObjectCountingGame />} />
         <Route path="/play/finger-math" element={<FingerMathGame />} />
+        <Route path="/play/memory-match" element={<RegionalMemoryMatchGame />} />
         <Route path="/reminders" element={<RemindersScreen />} />
         <Route path="/progress" element={<ProgressScreen />} />
         <Route path="/caregiver" element={<CaregiverDashboardScreen />} />

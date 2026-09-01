@@ -52,6 +52,15 @@ export function PlayScreen() {
           ariaLabel={t('game.math.title')}
           id="game-math-card"
         />
+        <NavCard
+          to="/play/memory-match"
+          icon="🧩"
+          label={t('game.memory.title')}
+          subtitle={t('game.memory.subtitle')}
+          colorVar="var(--card-progress-bg)"
+          ariaLabel={t('game.memory.title')}
+          id="game-memory-card"
+        />
       </main>
     </div>
   );
