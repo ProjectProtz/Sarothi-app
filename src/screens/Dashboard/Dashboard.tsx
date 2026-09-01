@@ -33,6 +33,7 @@ import styles from './Dashboard.module.css';
 const GAME_ICON_MAP: Record<string, string> = {
   counting: '🧮',
   finger_math: '🖐️',
+  memory_match: '🧩',
 };
 
 /** Catmull-Rom to Cubic Bezier smooth spline generator for charts */
@@ -71,10 +72,11 @@ export function DashboardScreen() {
   const [storedAlerts, setStoredAlerts] = useState<Alert[]>([]);
   const [countingDiff, setCountingDiff] = useState<number>(1);
   const [mathDiff, setMathDiff] = useState<number>(1);
+  const [memoryDiff, setMemoryDiff] = useState<number>(1);
 
   // UI states
   const [activeTab, setActiveTab] = useState<'overview' | 'alerts' | 'history'>('overview');
-  const [gameFilter, setGameFilter] = useState<'all' | 'counting' | 'finger_math'>('all');
+  const [gameFilter, setGameFilter] = useState<'all' | 'counting' | 'finger_math' | 'memory_match'>('all');
   const [selectedSessionId, setSelectedSessionId] = useState<string | null>(null);
   const [syncToast, setSyncToast] = useState<string | null>(null);
   const [dismissedAlerts, setDismissedAlerts] = useState<Set<string>>(new Set());
@@ -85,13 +87,14 @@ export function DashboardScreen() {
     if (!currentPatient) return;
     setPatient(currentPatient);
 
-    const [cg, sess, rems, alrts, cDiff, mDiff] = await Promise.all([
+    const [cg, sess, rems, alrts, cDiff, mDiff, memDiff] = await Promise.all([
       getCaregiverForPatient(currentPatient.id),
       getSessionsForPatient(currentPatient.id, 100),
       getRemindersForPatient(currentPatient.id),
       getAlertsForPatient(currentPatient.id),
       calculateNextDifficulty(currentPatient.id, 'counting'),
       calculateNextDifficulty(currentPatient.id, 'finger_math'),
+      calculateNextDifficulty(currentPatient.id, 'memory_match'),
     ]);
 
     setCaregiver(cg || null);
@@ -100,6 +103,7 @@ export function DashboardScreen() {
     setStoredAlerts(alrts);
     setCountingDiff(cDiff);
     setMathDiff(mDiff);
+    setMemoryDiff(memDiff);
 
     if (sess.length > 0) {
       setSelectedSessionId(sess[0].id);
@@ -346,6 +350,7 @@ export function DashboardScreen() {
   const formatGameTitle = (gameType: string) => {
     if (gameType === 'counting') return t('game.counting.title');
     if (gameType === 'finger_math') return t('game.math.title');
+    if (gameType === 'memory_match') return t('game.memory.title');
     return gameType;
   };
 
@@ -496,6 +501,13 @@ export function DashboardScreen() {
                 >
                   <span>🖐️</span>
                   <span>{t('game.math.title')}</span>
+                </button>
+                <button
+                  className={`${styles.filterBtn} ${gameFilter === 'memory_match' ? styles.filterActive : ''}`}
+                  onClick={() => setGameFilter('memory_match')}
+                >
+                  <span>🧩</span>
+                  <span>{t('game.memory.title')}</span>
                 </button>
               </div>
             </div>
@@ -755,6 +767,27 @@ export function DashboardScreen() {
                   ))}
                 </div>
                 <div className={styles.adaptiveDesc}>{t('dashboard.adaptive.game.math_desc')}</div>
+              </div>
+
+              <div className={styles.adaptiveCard}>
+                <div className={styles.adaptiveHeader}>
+                  <div className={styles.adaptiveGameTitle}>
+                    <span>🧩</span>
+                    <span>{t('game.memory.title')}</span>
+                  </div>
+                  <span className={styles.levelBadge}>
+                    {t('dashboard.adaptive.level').replace('{level}', memoryDiff.toString())}
+                  </span>
+                </div>
+                <div className={styles.levelGauge} aria-hidden="true">
+                  {[1, 2, 3, 4, 5].map((lvl) => (
+                    <div
+                      key={lvl}
+                      className={`${styles.levelDot} ${lvl <= memoryDiff ? styles.levelDotFilled : ''}`}
+                    />
+                  ))}
+                </div>
+                <div className={styles.adaptiveDesc}>{t('dashboard.adaptive.game.memory_desc')}</div>
               </div>
             </div>
           </section>
