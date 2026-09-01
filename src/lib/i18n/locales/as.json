@@ -4,6 +4,7 @@
 
   "nav.home": "ঘৰ",
   "nav.back": "পিছলৈ",
+  "nav.caregiver_mode": "যত্নকাৰী দৃশ্য",
 
   "home.greeting": "নমস্কাৰ, ৰতন!",
   "home.subtitle": "আজি আপুনি কি কৰিব বিচাৰে?",
@@ -28,6 +29,7 @@
   "screen.reminders.title": "সোঁৱৰণী",
   "screen.progress.title": "মোৰ অগ্ৰগতি",
   "screen.caregiver.title": "যত্নকাৰী ডেচব'ৰ্ড",
+  "screen.dashboard.title": "যত্নকাৰী ডেচব'ৰ্ড",
 
   "a11y.home.card.play": "খেলৰ পৰ্দা খোলক",
   "a11y.home.card.reminders": "সোঁৱৰণীৰ পৰ্দা খোলক",
@@ -88,5 +90,75 @@
   "reminder.label.hydration.afternoon": "এগিলাচ পানী খাওক",
   "reminder.label.activity.walk": "গধূলিৰ খোজকঢ়া",
   "reminder.label.medicine.evening": "ৰাতিৰ ঔষধ",
-  "reminder.label.appointment.doctor": "চিকিৎসকৰ পৰীক্ষা"
+  "reminder.label.appointment.doctor": "চিকিৎসকৰ পৰীক্ষা",
+
+  "dashboard.patient.label": "ৰোগী",
+  "dashboard.caregiver.label": "যত্নকাৰী",
+  "dashboard.mode.badge": "যত্নকাৰী প'ৰ্টেল",
+  "dashboard.action.voice_summary": "সাৰাংশ পঢ়ক",
+  "dashboard.action.back": "ঘৰলৈ উভতি যাওক",
+  "dashboard.tab.overview": "সামগ্ৰিক দৃশ্য আৰু ধাৰা",
+  "dashboard.tab.alerts": "যত্নকাৰীৰ মনোযোগ",
+  "dashboard.tab.history": "কাৰ্য্যকলাপৰ ইতিহাস",
+
+  "dashboard.sync.title": "তথ্যৰ সাম্প্ৰতিকতা আৰু অফলাইন স্থিতি",
+  "dashboard.sync.status.synced": "সকলো তথ্য সুৰক্ষিতভাৱে সংৰক্ষিত আৰু সংমিশ্ৰিত",
+  "dashboard.sync.status.pending": "{count} টা অধিবেশন অফলাইনত সুৰক্ষিত, সংমিশ্ৰণ বাকী",
+  "dashboard.sync.action.sync_now": "এতিয়াই সংমিশ্ৰণ কৰক",
+  "dashboard.sync.last_activity": "শেহতীয়া কাৰ্য্যকলাপ: {time}",
+  "dashboard.sync.storage_type": "অফলাইন সঞ্চয়: ডেক্সি ইনডেক্সডডিবি",
+  "dashboard.sync.toast_synced": "অফলাইন অধিবেশনসমূহ সংমিশ্ৰিত হিচাপে চিহ্নিত কৰা হ'ল।",
+
+  "dashboard.metric.total_sessions": "মুঠ অধিবেশন",
+  "dashboard.metric.avg_accuracy": "গড় সঠিকতা",
+  "dashboard.metric.total_time": "মুঠ অংশগ্ৰহণ",
+  "dashboard.metric.compliance_rate": "সোঁৱৰণী পালনৰ হাৰ",
+
+  "dashboard.chart.accuracy_title": "সময়ৰ সৈতে অংশগ্ৰহণৰ সঠিকতা",
+  "dashboard.chart.accuracy_subtitle": "জ্ঞানমূলক খেলৰ সভাবোৰত অগ্ৰগতিৰ সূচক",
+  "dashboard.chart.filter.all": "সকলো খেল",
+  "dashboard.chart.filter.counting": "বস্তু গণনা",
+  "dashboard.chart.filter.math": "দৈনন্দিন অংক",
+  "dashboard.chart.no_data": "এতিয়ালৈ কোনো খেলৰ তথ্য নাই। ধাৰা চাবলৈ এটা খেল খেলক।",
+  "dashboard.chart.session_point": "অধিবেশন {n}: {accuracy}% ({game})",
+  "dashboard.chart.frequency_title": "অধিবেশনৰ সঘনতা (বিগত ৭ দিন)",
+  "dashboard.chart.frequency_subtitle": "দৈনিক জ্ঞানমূলক অংশগ্ৰহণৰ পৰিমাণ",
+  "dashboard.chart.sessions_count": "{count} টা অধিবেশন",
+  "dashboard.chart.stats.latest": "শেহতীয়া স্ক'ৰ",
+  "dashboard.chart.stats.peak": "সৰ্বোচ্চ স্ক'ৰ",
+  "dashboard.chart.stats.total": "প্ৰদৰ্শিত অধিবেশন",
+  "dashboard.chart.session_tooltip_title": "অধিবেশন {n}",
+
+  "dashboard.adaptive.title": "অভিযোজিত কাঠিন্যৰ স্তৰ",
+  "dashboard.adaptive.subtitle": "শেহতীয়া খেলৰ ওপৰত ভিত্তি কৰি কাঠিন্য নিজে নিজে সলনি হয়",
+  "dashboard.adaptive.level": "৫ ৰ ভিতৰত {level} স্তৰ",
+  "dashboard.adaptive.game.counting_desc": "লক্ষ্য বস্তুৰ সংখ্যা আৰু বিক্ষিপ্তকাৰী নিয়ন্ত্ৰণ কৰে",
+  "dashboard.adaptive.game.math_desc": "গাণিতিক জটিলতা আৰু সংখ্যাৰ পৰিসৰ নিয়ন্ত্ৰণ কৰে",
+
+  "dashboard.alerts.section_title": "মনোযোগ আৰু পৰ্যবেক্ষণ",
+  "dashboard.alerts.none": "কোনো সতৰ্কবাৰ্তা নাই। সকলো ঠিকেই আছে!",
+  "dashboard.alerts.action.acknowledge": "স্বীকাৰ কৰক",
+  "dashboard.alerts.action.view_reminders": "সোঁৱৰণী চাওক",
+  "dashboard.alerts.flag.missed_reminder": "বাদ পৰা সোঁৱৰণী",
+  "dashboard.alerts.flag.missed_reminder_desc": "{time} ত নিৰ্ধাৰিত — সম্পন্ন হিচাপে চিহ্নিত কৰা হোৱা নাছিল",
+  "dashboard.alert.declining_trend.title": "অংশগ্ৰহণৰ পৰ্যবেক্ষণ",
+  "dashboard.alert.declining_trend.desc": "শেহতীয়া খেলৰ সভাবোৰত পূৰ্বৰ তুলনাত কম সঠিকতা দেখা গৈছে। শান্ত পৰিৱেশ বা দিনটোৰ অন্য সময়ত চেষ্টা কৰিলে অংশগ্ৰহণত সহায় হ'ব পাৰে।",
+  "dashboard.alert.inactivity.title": "কাৰ্য্যকলাপৰ জাননী",
+  "dashboard.alert.inactivity.desc": "বিগত ৪৮ ঘণ্টাত কোনো খেলৰ অধিবেশন নথিভুক্ত হোৱা নাই। খেলিবলৈ এটা মৃদু সোঁৱৰণী সহায়ক হ'ব পাৰে।",
+
+  "dashboard.history.title": "শেহতীয়া কাৰ্য্যকলাপৰ তালিকা",
+  "dashboard.history.empty": "এতিয়ালৈ কোনো সমাপ্ত অধিবেশন নাই।",
+  "dashboard.history.duration": "সময়: {sec} ছেকেণ্ড",
+  "dashboard.history.accuracy": "সঠিকতা: {pct}%",
+  "dashboard.history.difficulty": "কাঠিন্য স্তৰ {lvl}",
+  "dashboard.history.synced": "সংমিশ্ৰিত",
+  "dashboard.history.local": "অফলাইন স্থানীয়",
+
+  "dashboard.voice.summary_template": "{name}ৰ বাবে যত্নকাৰী সাৰাংশ। মুঠ {sessions} টা অধিবেশন সম্পন্ন হৈছে, গড় সঠিকতা {accuracy}%। {alertSummary}",
+  "dashboard.voice.no_alerts": "সকলো সোঁৱৰণী আৰু অংশগ্ৰহণৰ সূচক সঠিক দিশত আছে।",
+  "dashboard.voice.has_alerts": "মনোযোগ দিয়ক: আপোনাৰ ওচৰত পৰ্যালোচনা কৰিবলৈ {count} টা সতৰ্কবাৰ্তা বা বাদ পৰা সোঁৱৰণী আছে।",
+
+  "dashboard.ai.title": "কৃত্ৰিম বুদ্ধিমত্তা জ্ঞানমূলক মূল্যায়ন (কাৰ্য্য F সংযোগৰ বাবে সাজু)",
+  "dashboard.ai.desc": "গাঁথনিগত এলএলএম স্মৃতিচাৰণ ব্যাখ্যা আৰু ক্লাউড ছিংক পাইপলাইন ইয়াত যুক্ত হ'ব।",
+  "dashboard.ai.badge": "কাৰ্য্য F সংযোগ"
 }

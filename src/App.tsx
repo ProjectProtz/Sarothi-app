@@ -1,5 +1,5 @@
 /**
- * App.tsx — Root routing for Sakhi.
+ * App.tsx — Root routing for Sarothi.
  *
  * HOW TO ADD A NEW SCREEN (for Tasks B/C/D/E/F):
  *   1. Create src/screens/YourScreen/index.tsx
@@ -27,6 +27,7 @@ export function App() {
         <Route path="/reminders" element={<RemindersScreen />} />
         <Route path="/progress" element={<ProgressScreen />} />
         <Route path="/caregiver" element={<CaregiverDashboardScreen />} />
+        <Route path="/dashboard" element={<CaregiverDashboardScreen />} />
         {/* Catch-all — redirect to home */}
         <Route path="*" element={<HomeScreen />} />
       </Routes>
