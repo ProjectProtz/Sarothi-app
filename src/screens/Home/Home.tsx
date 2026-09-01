@@ -1,12 +1,13 @@
 /**
  * Home screen — FR-1.
  * Shows 3 large navigation cards: Play, Reminders, My Progress.
- * Language selector in top-right corner.
+ * Header includes Caregiver Mode quick navigation and Language selector.
  *
  * Voice: auto-reads the greeting on mount and on language change (useVoiceGuidance).
  * A 🔊 SpeakButton next to the greeting lets the patient replay it on demand.
  */
 
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from '@/lib/i18n';
 import { useVoiceGuidance } from '@/lib/voice';
 import { NavCard } from '@/components/NavCard';
@@ -16,6 +17,7 @@ import styles from './Home.module.css';
 
 export function HomeScreen() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   // Auto-read the greeting on mount and whenever the language changes.
   useVoiceGuidance(t('home.greeting'));
@@ -25,7 +27,17 @@ export function HomeScreen() {
       {/* Top bar */}
       <header className={styles.header}>
         <div className={styles.appName}>{t('app.name')}</div>
-        <LanguageSelector />
+        <div className={styles.headerActions}>
+          <button
+            onClick={() => navigate('/dashboard')}
+            className={styles.caregiverLink}
+            aria-label={t('nav.caregiver_mode')}
+          >
+            <span>🧑‍⚕️</span>
+            <span>{t('nav.caregiver_mode')}</span>
+          </button>
+          <LanguageSelector />
+        </div>
       </header>
 
       {/* Greeting */}

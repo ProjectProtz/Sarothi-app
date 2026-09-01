@@ -4,6 +4,7 @@
 
   "nav.home": "Home",
   "nav.back": "Back",
+  "nav.caregiver_mode": "Caregiver View",
 
   "home.greeting": "Hello, Ratan!",
   "home.subtitle": "What would you like to do today?",
@@ -28,6 +29,7 @@
   "screen.reminders.title": "Reminders",
   "screen.progress.title": "My Progress",
   "screen.caregiver.title": "Caregiver Dashboard",
+  "screen.dashboard.title": "Caregiver Dashboard",
 
   "a11y.home.card.play": "Open games screen",
   "a11y.home.card.reminders": "Open reminders screen",
@@ -88,5 +90,75 @@
   "reminder.label.hydration.afternoon": "Drink a glass of water",
   "reminder.label.activity.walk": "Evening Walk",
   "reminder.label.medicine.evening": "Night Pill",
-  "reminder.label.appointment.doctor": "Doctor Checkup"
+  "reminder.label.appointment.doctor": "Doctor Checkup",
+
+  "dashboard.patient.label": "Patient",
+  "dashboard.caregiver.label": "Caregiver",
+  "dashboard.mode.badge": "Caregiver Portal",
+  "dashboard.action.voice_summary": "Read Summary",
+  "dashboard.action.back": "Back to Home",
+  "dashboard.tab.overview": "Overview & Trends",
+  "dashboard.tab.alerts": "Caregiver Attention",
+  "dashboard.tab.history": "Activity History",
+
+  "dashboard.sync.title": "Data Recency & Offline Status",
+  "dashboard.sync.status.synced": "All records safely saved & synced",
+  "dashboard.sync.status.pending": "{count} session(s) saved offline, pending sync",
+  "dashboard.sync.action.sync_now": "Sync Now",
+  "dashboard.sync.last_activity": "Last activity: {time}",
+  "dashboard.sync.storage_type": "Offline Storage: Dexie IndexedDB",
+  "dashboard.sync.toast_synced": "Offline sessions marked as synced.",
+
+  "dashboard.metric.total_sessions": "Total Sessions",
+  "dashboard.metric.avg_accuracy": "Average Accuracy",
+  "dashboard.metric.total_time": "Total Engagement",
+  "dashboard.metric.compliance_rate": "Reminder Compliance",
+
+  "dashboard.chart.accuracy_title": "Engagement Accuracy Over Time",
+  "dashboard.chart.accuracy_subtitle": "Progress indicators across cognitive game sessions",
+  "dashboard.chart.filter.all": "All Games",
+  "dashboard.chart.filter.counting": "Object Counting",
+  "dashboard.chart.filter.math": "Everyday Math",
+  "dashboard.chart.no_data": "No game sessions recorded yet. Play a session to see trends.",
+  "dashboard.chart.session_point": "Session {n}: {accuracy}% ({game})",
+  "dashboard.chart.frequency_title": "Session Frequency (Last 7 Days)",
+  "dashboard.chart.frequency_subtitle": "Daily cognitive engagement volume",
+  "dashboard.chart.sessions_count": "{count} session(s)",
+  "dashboard.chart.stats.latest": "Latest Score",
+  "dashboard.chart.stats.peak": "Best Score",
+  "dashboard.chart.stats.total": "Sessions Shown",
+  "dashboard.chart.session_tooltip_title": "Session {n}",
+
+  "dashboard.adaptive.title": "Adaptive Difficulty Levels",
+  "dashboard.adaptive.subtitle": "Difficulty automatically adjusts based on recent session performance",
+  "dashboard.adaptive.level": "Level {level} of 5",
+  "dashboard.adaptive.game.counting_desc": "Adjusts target item count and visual distractors",
+  "dashboard.adaptive.game.math_desc": "Adjusts arithmetic complexity and number range",
+
+  "dashboard.alerts.section_title": "Attention & Observations",
+  "dashboard.alerts.none": "No attention flags. Everything is on track!",
+  "dashboard.alerts.action.acknowledge": "Acknowledge",
+  "dashboard.alerts.action.view_reminders": "View Reminders",
+  "dashboard.alerts.flag.missed_reminder": "Missed Reminder",
+  "dashboard.alerts.flag.missed_reminder_desc": "Scheduled for {time} — was not marked done",
+  "dashboard.alert.declining_trend.title": "Engagement Observation",
+  "dashboard.alert.declining_trend.desc": "Recent game sessions show lower response accuracy than earlier sessions. A quiet environment or trying a different time of day may help engagement.",
+  "dashboard.alert.inactivity.title": "Activity Notice",
+  "dashboard.alert.inactivity.desc": "No game sessions recorded in the last 48 hours. A friendly reminder to play may be helpful.",
+
+  "dashboard.history.title": "Recent Activity Feed",
+  "dashboard.history.empty": "No completed sessions yet.",
+  "dashboard.history.duration": "Duration: {sec}s",
+  "dashboard.history.accuracy": "Accuracy: {pct}%",
+  "dashboard.history.difficulty": "Difficulty Level {lvl}",
+  "dashboard.history.synced": "Synced",
+  "dashboard.history.local": "Offline Local",
+
+  "dashboard.voice.summary_template": "Caregiver summary for {name}. Total {sessions} sessions completed with {accuracy}% average accuracy. {alertSummary}",
+  "dashboard.voice.no_alerts": "All reminders and engagement indicators are on track.",
+  "dashboard.voice.has_alerts": "Attention: You have {count} active alerts or missed reminders to review.",
+
+  "dashboard.ai.title": "AI Cognitive Assessment (Task F Extension Ready)",
+  "dashboard.ai.desc": "Structured LLM recall scoring and cloud sync pipelines will connect here.",
+  "dashboard.ai.badge": "Task F Hook"
 }
