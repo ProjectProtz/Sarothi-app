@@ -64,5 +64,29 @@
   "game.math.template.oranges_sub": "আপোনাৰ ওচৰত {n} পাচি সুমথিৰা আছে আৰু আপুনি তাৰে {m} আপোনাৰ ওচৰচুবুৰীয়াক দিলে, এতিয়া কিমান বাকী থাকিল?",
   "game.math.template.tea_add": "আপুনি ৰাতিপুৱা {n} পাচি চাহ পাত ছিঙিলে আৰু আবেলি {m} পাচি। মুঠতে কিমান হ'ল?",
   "game.math.template.tea_sub": "আপোনাৰ ওচৰত {n} পাচি চাহ পাত আছিল, কিন্তু তাৰে {m} ফেক্টৰীলৈ নিয়া হ'ল। এতিয়া কিমান বাকী থাকিল?",
-  "game.math.template.pitha_add": "আপুনি বিহুৰ বাবে {n} টা পিঠা বনালে, আৰু আপোনাৰ ভনীয়েকে {m} টা বনালে। মুঠতে কিমান পিঠা হ'ল?"
+  "game.math.template.pitha_add": "আপুনি বিহুৰ বাবে {n} টা পিঠা বনালে, আৰু আপোনাৰ ভনীয়েকে {m} টা বনালে। মুঠতে কিমান পিঠা হ'ল?",
+
+  "reminder.type.medicine": "ঔষধ",
+  "reminder.type.hydration": "পানী",
+  "reminder.type.activity": "কাৰ্য্য",
+  "reminder.type.appointment": "সাক্ষাৎকাৰ",
+  "reminder.status.pending": "বাকী আছে",
+  "reminder.status.done": "হৈ গ'ল",
+  "reminder.status.missed": "বাদ পৰিল",
+  "reminder.status.snoozed": "পিছত",
+  "reminder.action.done": "হৈ গ'ল",
+  "reminder.action.snooze": "মোক পিছত মনত পেলাই দিব",
+  "reminder.reset": "পূনৰ্বিন্যাস (ডেমো)",
+  "reminder.reset.confirm": "ডেমোৰ বাবে আজিৰ সকলো সোঁৱৰণী বাকী থকা অৱস্থালৈ ঘূৰাই নিবনে?",
+  "reminder.section.next": "পৰৱৰ্তী",
+  "reminder.section.later": "আজিৰ সোঁৱৰণীবোৰ",
+  "reminder.empty": "আজিলৈ আৰু কোনো সোঁৱৰণী নাই!",
+  
+  "reminder.label.medicine.morning": "ৰাতিপুৱাৰ ঔষধ",
+  "reminder.label.hydration.morning": "এগিলাচ পানী খাওক",
+  "reminder.label.medicine.afternoon": "দুপৰীয়াৰ ঔষধ",
+  "reminder.label.hydration.afternoon": "এগিলাচ পানী খাওক",
+  "reminder.label.activity.walk": "গধূলিৰ খোজকঢ়া",
+  "reminder.label.medicine.evening": "ৰাতিৰ ঔষধ",
+  "reminder.label.appointment.doctor": "চিকিৎসকৰ পৰীক্ষা"
 }

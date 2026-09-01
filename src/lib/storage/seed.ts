@@ -10,9 +10,9 @@
  */
 
 import { db } from './db';
-import type { Patient, Caregiver } from './db';
+import type { Patient, Caregiver, Reminder } from './db';
 
-const SEED_VERSION_KEY = 'sakhi_seed_v1';
+const SEED_VERSION_KEY = 'sakhi_seed_v2';
 
 /** Fictional patient record — Ratan Bora (PRD Section 6 persona). */
 const SEED_PATIENT: Patient = {
@@ -41,8 +41,81 @@ export async function seedDatabase(): Promise<void> {
   const alreadySeeded = localStorage.getItem(SEED_VERSION_KEY);
   if (alreadySeeded) return;
 
+  const now = new Date();
+  const todayAt = (hours: number, minutes: number = 0) => {
+    const d = new Date(now);
+    d.setHours(hours, minutes, 0, 0);
+    return d.getTime();
+  };
+
+  const seedReminders: Reminder[] = [
+    {
+      id: 'rem_med_morning_1',
+      patient_id: SEED_PATIENT.id,
+      type: 'medicine',
+      label: 'reminder.label.medicine.morning',
+      scheduled_time: todayAt(8, 0),
+      status: 'pending',
+      created_at: now.getTime(),
+    },
+    {
+      id: 'rem_hyd_morning_1',
+      patient_id: SEED_PATIENT.id,
+      type: 'hydration',
+      label: 'reminder.label.hydration.morning',
+      scheduled_time: todayAt(10, 0),
+      status: 'pending',
+      created_at: now.getTime(),
+    },
+    {
+      id: 'rem_med_afternoon_1',
+      patient_id: SEED_PATIENT.id,
+      type: 'medicine',
+      label: 'reminder.label.medicine.afternoon',
+      scheduled_time: todayAt(13, 0),
+      status: 'pending',
+      created_at: now.getTime(),
+    },
+    {
+      id: 'rem_hyd_afternoon_1',
+      patient_id: SEED_PATIENT.id,
+      type: 'hydration',
+      label: 'reminder.label.hydration.afternoon',
+      scheduled_time: todayAt(15, 0),
+      status: 'pending',
+      created_at: now.getTime(),
+    },
+    {
+      id: 'rem_act_walk_1',
+      patient_id: SEED_PATIENT.id,
+      type: 'activity',
+      label: 'reminder.label.activity.walk',
+      scheduled_time: todayAt(17, 0),
+      status: 'pending',
+      created_at: now.getTime(),
+    },
+    {
+      id: 'rem_med_evening_1',
+      patient_id: SEED_PATIENT.id,
+      type: 'medicine',
+      label: 'reminder.label.medicine.evening',
+      scheduled_time: todayAt(20, 0),
+      status: 'pending',
+      created_at: now.getTime(),
+    },
+    {
+      id: 'rem_apt_doctor_1',
+      patient_id: SEED_PATIENT.id,
+      type: 'appointment',
+      label: 'reminder.label.appointment.doctor',
+      scheduled_time: todayAt(14, 30),
+      status: 'pending',
+      created_at: now.getTime(),
+    },
+  ];
+
   try {
-    await db.transaction('rw', db.patients, db.caregivers, async () => {
+    await db.transaction('rw', db.patients, db.caregivers, db.reminders, async () => {
       // putIfNotExists pattern — don't overwrite user changes
       const existingPatient = await db.patients.get(SEED_PATIENT.id);
       if (!existingPatient) {
@@ -52,6 +125,13 @@ export async function seedDatabase(): Promise<void> {
       const existingCaregiver = await db.caregivers.get(SEED_CAREGIVER.id);
       if (!existingCaregiver) {
         await db.caregivers.put(SEED_CAREGIVER);
+      }
+
+      for (const reminder of seedReminders) {
+        const existingReminder = await db.reminders.get(reminder.id);
+        if (!existingReminder) {
+          await db.reminders.put(reminder);
+        }
       }
     });
 
