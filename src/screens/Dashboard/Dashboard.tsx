@@ -13,6 +13,7 @@ import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation, type TranslationKey } from '@/lib/i18n';
 import { speak } from '@/lib/voice';
+import { generateInsight, type InsightMode } from '@/lib/ai/insights';
 import {
   getActivePatient,
   getCaregiverForPatient,
@@ -81,7 +82,32 @@ export function DashboardScreen() {
   const [syncToast, setSyncToast] = useState<string | null>(null);
   const [dismissedAlerts, setDismissedAlerts] = useState<Set<string>>(new Set());
 
+  // AI Insight state
+  const [insightText, setInsightText] = useState<string>('');
+  const [insightMode, setInsightMode] = useState<InsightMode>('fallback');
+  const [insightLoading, setInsightLoading] = useState<boolean>(true);
+
   // Load all dashboard data from Dexie IndexedDB
+  // (defined after loadInsight to avoid forward reference)
+
+  /** (Re-)generate the AI engagement insight. Called on mount and by Regenerate button. */
+  const loadInsight = useCallback(async (sessionsOverride?: Session[]) => {
+    setInsightLoading(true);
+    // Accept sessions directly to avoid stale closure when called from loadDashboardData
+    const targetSessions = sessionsOverride ?? sessions;
+    try {
+      const result = await generateInsight(targetSessions);
+      setInsightText(result.text);
+      setInsightMode(result.mode);
+    } catch {
+      // generateInsight never throws — this is a safety net only
+      setInsightMode('fallback');
+    } finally {
+      setInsightLoading(false);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const loadDashboardData = useCallback(async () => {
     const currentPatient = await getActivePatient();
     if (!currentPatient) return;
@@ -108,11 +134,15 @@ export function DashboardScreen() {
     if (sess.length > 0) {
       setSelectedSessionId(sess[0].id);
     }
-  }, []);
+
+    // Kick off the AI insight after session data is available — pass sess directly
+    loadInsight(sess);
+  }, [loadInsight]);
 
   useEffect(() => {
     loadDashboardData();
   }, [loadDashboardData]);
+
 
   // Derived metrics
   const totalSessions = sessions.length;
@@ -792,13 +822,55 @@ export function DashboardScreen() {
             </div>
           </section>
 
-          {/* Task F Extension Hook Banner */}
-          <section className={styles.aiCard} aria-label="ai extension hook">
-            <div className={styles.aiContent}>
-              <h4>🤖 {t('dashboard.ai.title')}</h4>
-              <p>{t('dashboard.ai.desc')}</p>
+          {/* AI Engagement Insight Card — Task F (FR-17) */}
+          <section className={styles.aiCard} aria-label="ai engagement insight">
+            {/* Header row */}
+            <div className={styles.aiCardHeader}>
+              <div className={styles.aiHeaderLeft}>
+                <div className={styles.aiCardTitle}>
+                  🤖 {t('dashboard.ai.title')}
+                </div>
+                <div className={styles.aiCardSubtitle}>
+                  {t('dashboard.ai.subtitle')}
+                </div>
+              </div>
+              {!insightLoading && (
+                insightMode === 'live'
+                  ? <span className={styles.aiBadgeLive}>{t('dashboard.ai.badge.live')}</span>
+                  : <span className={styles.aiBadgeExample}>{t('dashboard.ai.badge.example')}</span>
+              )}
             </div>
-            <span className={styles.aiBadge}>{t('dashboard.ai.badge')}</span>
+
+            {/* Body */}
+            {insightLoading ? (
+              <div className={styles.aiLoadingRow} aria-live="polite" aria-busy="true">
+                <div className={styles.aiSpinner} aria-hidden="true" />
+                <span className={styles.aiLoadingText}>{t('dashboard.ai.loading')}</span>
+              </div>
+            ) : (
+              <p className={styles.aiBody} aria-live="polite">
+                {insightText}
+              </p>
+            )}
+
+            {/* Footer */}
+            <div className={styles.aiFooter}>
+              <span className={styles.aiDisclaimer}>
+                {insightMode === 'fallback' && !insightLoading
+                  ? `${t('dashboard.ai.error_note')} · `
+                  : ''}
+                {t('dashboard.ai.disclaimer')}
+              </span>
+              <button
+                id="ai-insight-regenerate-btn"
+                className={styles.aiRegenBtn}
+                onClick={() => loadInsight()}
+                disabled={insightLoading}
+                aria-label={t('dashboard.ai.regenerate')}
+              >
+                ↻ {t('dashboard.ai.regenerate')}
+              </button>
+            </div>
           </section>
         </main>
       )}
