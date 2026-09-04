@@ -193,7 +193,12 @@
   "dashboard.voice.no_alerts": "All reminders and engagement indicators are on track.",
   "dashboard.voice.has_alerts": "Attention: You have {count} active alerts or missed reminders to review.",
 
-  "dashboard.ai.title": "AI Cognitive Assessment (Task F Extension Ready)",
-  "dashboard.ai.desc": "Structured LLM recall scoring and cloud sync pipelines will connect here.",
-  "dashboard.ai.badge": "Task F Hook"
+  "dashboard.ai.title": "AI Engagement Insight",
+  "dashboard.ai.subtitle": "Powered by Gemini · Engagement observations only, not medical advice",
+  "dashboard.ai.badge.live": "Live",
+  "dashboard.ai.badge.example": "Example",
+  "dashboard.ai.loading": "Generating insight…",
+  "dashboard.ai.regenerate": "Regenerate",
+  "dashboard.ai.disclaimer": "Engagement observations only — not a medical assessment",
+  "dashboard.ai.error_note": "Showing example observation"
 }
